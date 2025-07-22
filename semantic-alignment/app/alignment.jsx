@@ -21,7 +21,7 @@ export function AlignmentComponent() {
   };
 
   return (
-    <div className="min-h-screen w-screen flex flex-col items-center justify-center p-8 bg-gray-50">
+    <div className="min-h-screen w-screen flex flex-col items-center justify-center p-8">
       <h1 className="text-2xl font-bold mb-6">Semantic Alignment App</h1>
 
       <div className="flex flex-col md:flex-row gap-6 w-full max-w-4xl">
@@ -32,7 +32,7 @@ export function AlignmentComponent() {
             placeholder="Enter business process details..."
             value={businessProcess}
             onChange={(e) => setBusinessProcess(e.target.value)}
-            className="mt-1"
+            className="mt-1 bg-gray-50"
           />
         </div>
         <div className="flex-1">
@@ -42,19 +42,21 @@ export function AlignmentComponent() {
             placeholder="Enter information system details..."
             value={informationSystem}
             onChange={(e) => setInformationSystem(e.target.value)}
-            className="mt-1"
+            className="mt-1 bg-gray-50"
           />
         </div>
       </div>
 
       {/* Button to generate random number */}
       <Button onClick={handleGenerate} className="mt-6">
-        Generate Random Number
+        Generate Alignment Score
       </Button>
 
       {/* Display the result */}
       {result !== null && (
-        <p className="mt-4 text-lg font-semibold">Alignment Score {result}</p>
+        <p className="mt-4 text-lg font-semibold">
+          Alignment Score {result.toFixed(3)}
+        </p>
       )}
     </div>
   );
